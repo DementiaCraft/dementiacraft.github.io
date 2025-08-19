@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DementiaCraft</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        :root {
+            --primary: #ac2020;
+            --primary-dark: #242424;
+            --secondary: #119b84;
+            --dark: #1e293b;
+            --light: #119b84;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+            color: var(--dark);
+            background-color: var(--light);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--secondary);
+        }
+
+        .bg-color-primary {
+            background-color: var(--primary);
+        }
+        
+        /* Animation classes */
+        .fade-in {
+            animation: fadeIn 1s ease-in-out;
+        }
+        
+        .slide-up {
+            animation: slideUp 0.8s ease-out;
+        }
+        
+        .scale-in {
+            animation: scaleIn 0.5s ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes slideUp {
+            from { 
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes scaleIn {
+            from { 
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to { 
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        
+        /* Navbar shadow on scroll */
+        .scrolled {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+        }
+        
+        /* Section spacing */
+        section {
+            min-height: 100vh;
+            padding-top: 80px;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            section {
+                padding-top: 60px;
+            }
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <!-- Sticky Navigation -->
+    <nav id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-white py-4">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->
+                <a href="#" class="flex items-center space-x-2">
+                    <div class="w-10 h-10 rounded-full bg-color-primary flex items-center justify-center text-white font-bold text-xl scale-in">
+                        DC
+                    </div>
+                    <span class="text-xl font-bold text-gray-800 hidden sm:block">DementiaCraft</span>
+                </a>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="#about" class="text-gray-600 hover:text-blue-500 transition-colors duration-300 font-medium">About</a>
+                    <a href="#join" class="text-gray-600 hover:text-blue-500 transition-colors duration-300 font-medium">Join</a>
+                    <a href="#rules" class="text-gray-600 hover:text-blue-500 transition-colors duration-300 font-medium">Rules</a>
+                    <a href="#shopping" class="text-gray-600 hover:text-blue-500 transition-colors duration-300 font-medium">Shopping District</a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-button" class="md:hidden text-gray-600 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Navigation -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white w-full py-2 px-4 shadow-lg">
+            <div class="flex flex-col space-y-3">
+                <a href="#about" class="text-gray-600 hover:text-blue-500 transition-colors duration-300 font-medium py-2 border-b border-gray-100">About</a>
+                <a href="#join" class="text-gray-600 hover:text-blue-500 transition-colors duration-300 font-medium py-2 border-b border-gray-100">Join</a>
+                <a href="#rules" class="text-gray-600 hover:text-blue-500 transition-colors duration-300 font-medium py-2 border-b border-gray-100">Rules</a>
+                <a href="#shopping" class="text-gray-600 hover:text-blue-500 transition-colors duration-300 font-medium py-2">Shopping District</a>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Main Content -->
+    <main>
+        <!-- About Section -->
+        <section id="about" class="bg-white fade-in">
+            <div class="container mx-auto px-4 md:px-6 py-12">
+                <div class="max-w-4xl mx-auto">
+                    <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-8 slide-up">What is DementiaCraft?</h1>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="slide-up" style="animation-delay: 0.2s;">
+                            <p class="text-gray-600 mb-4 leading-relaxed">
+                                DementiaCraft is a community, started by some older, more seasoned players who wanted to create a server where players, all aged 25 and above, could share a passion for crafting, building, and exploring this pixelated world. Our mission is to cultivate a virtual haven, free from toxicity, and brimming with respect, responsibility, and fun.
+                            </p>
+                            <p class="text-gray-600 mb-6 leading-relaxed">
+                                DementiaCraft is a safe space and we expect nothing less than kindness, inclusivity, and maturity – that means we vet people before whitelisting and only accept applications if you are 25+ of age
+                            </p>
+                            <p class="text-gray-600 mb-6 leading-relaxed">
+                                DementicaCraft is <em>home</em>.
+                            </p>
+                            <h3 class="text-xl font-semibold mb-4 text-gray-800">
+                                How new is DementiaCraft ?
+                            </h3>
+                            <p class="text-gray-600 mb-6 leading-relaxed">
+                               The gates to Dementia opened on the fourth of August, 2023 and just a few weeks later, the community ventured out together to slay the dragon, armed only with bows and arrows and no armor! The event was a huge success and we are looking forward to many more! 
+                            </p>
+                            <p class="text-gray-600 mb-6 leading-relaxed">
+                                We have established a Shopping District at spawn which is starting to come alive, with community builds like a public spider spawner and a community house, and player owned shops which we highly encourage all to build and take part in the bartering (no plug-ins, honor system) – more on this when you’re invited to the discord.
+                            </p>
+                            <h3 class="text-xl font-semibold mb-4 text-gray-800">
+                                Features
+                            </h3>
+                            <p class="text-gray-600 mb-6 leading-relaxed">
+                                We play on a semi-vanilla, whitelisted server with no resets* – we have implemented a world border that will grow with the community and Minecraft updates. We also enjoy a live dynmap! *We will be resetting ‘The End’ and parts of ‘The Nether’ quarterly.
+                            </p>
+                            <h3 class="text-xl font-semibold mb-4 text-gray-800">
+                                Semi-Vanilla?
+                            </h3>
+                            <p class="text-gray-600 mb-6 leading-relaxed">
+                                While we enjoy the vanilla Minecraft experience, we have added a few Quality of Life plug-ins, to make the gaming experience even more enjoyable, some of these are:
+                            </p>
+                            <ul class="list-disc list-inside text-gray-600 mb-6 space-y-2">
+                                <li>Double Shulker shells</li>
+                                <li>Fast leaf decay</li>
+                                <li>1 player sleep</li>
+                                <li>Silence mobs</li>
+                                <li>Player head drops, Mobheads, mini-blocks, and statues</li>
+                            </ul>
+                            <p class="text-gray-600 mb-6 leading-relaxed">Changes to mobs:</p>
+                            <ul class="list-disc list-inside text-gray-600 mb-6 space-y-2">
+                                <li>No phantoms</li>
+                                <li>Bats drop membranes</li>
+                                <li>We’ve also provided the Endermen with a nice invisible block, so they won’t rearrange your terraforming</li>
+                            </ul>
+                        </div>
+
+                        <div class="slide-up" style="animation-delay: 0.4s;">
+                            <div class="rounded-xl p-4 h-full flex items-start justify-center">
+                                <div class="relative w-full h-64 md:h-80">
+                                    <div class="absolute inset-0 bg-gradient-to-br from-blue-400 to-purple-500 rounded-xl opacity-80"></div>
+                                    <div class="absolute inset-0 flex items-center justify-center">
+                                        <img src="https://i.imgur.com/c4repOK.jpeg" alt="DementiaCraft" class="rounded-xl shadow-lg transform hover:scale-105 transition-transform duration-300">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Join Section -->
+        <section id="join" class="bg-white fade-in">
+            <div class="container mx-auto px-4 md:px-6 py-12">
+                <div class="max-w-4xl mx-auto">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-8 slide-up">Join DementiaCraft</h2>
+                    <div class="bg-gray-50 rounded-xl p-6 md:p-8 slide-up" style="animation-delay: 0.2s;">
+                        <div class="space-y-6">
+                            <div class="flex items-start space-x-4">
+                                <div>
+                                    <p class="text-gray-600 mb-4 leading-relaxed">DementiaCraft is considered a safe space and welcomes all players regardless of gender identity, race, religion, etc. No griefing, stealing, bullying, insulting, discrimination of any kind, or prejudiced behavior is tolerated. Toxic behavior is not welcome.</p>
+                                    <p class="text-gray-600 mb-4 leading-relaxed">We encourage constructive communication, cooperation, and collaboration, enabling everyone to flourish and develop their skills in a welcoming atmosphere.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-4">
+                               
+                                <div>
+                                   <h3 class="text-lg font-semibold text-gray-800 mb-1">Expectations</h3>
+                                    <p><strong>We are looking for players who are</strong>:</p>
+                                    <ul class="list-disc list-inside text-gray-600 mb-6 space-y-2">
+                                        <li>Kind, respectful, and wanting to hang out and be part of a fun community</li>
+                                        <li>Community-minded — not focused solely on completing everything solo, but eager to share and build experiences together.</li>
+                                        <li>Ages 25 and older</li>
+                                        <li>Not using hacks or cheats, ie. no x-ray, baritone etc.</li>
+                                        <li>Willing to be active on our discord server</li>
+                                    </ul>
+                                    
+                                    <h3 class="text-lg font-semibold text-gray-800 mb-1"><strong>What can you expect from us</strong>?</h3>
+
+                                    <ul class="list-disc list-inside text-gray-600 mb-6 space-y-2">
+                                        <li>All of the above — plus a dedicated and communicative team of founders who are active both in-game and on Discord.</li>
+                                        <li>A high-performance server built for long-term play.</li>
+                                        <li>Grief protection to keep your builds and progress safe.</li>
+                                    </ul>
+
+                                    <h3 class="text-lg font-semibold text-gray-800 mb-1">Application process</h3>
+                                    <p>If you wish to join us, please <a href="https://web.archive.org/web/20250619030310/https://form.jotform.com/232073734911049" target="_blank" rel="noopener" title=""><strong>fill out this survey</strong></a>, then we will reach out to you via discord</p>
+
+
+
+                                </div>
+                            </div>
+                           
+                           
+                        </div>
+                        <div class="mt-8 bg-white p-4 rounded-lg border border-gray-200 slide-up" style="animation-delay: 0.4s;">
+                            <p class="text-gray-600 text-sm italic">By joining our community, you agree to abide by these rules. Violations may result in warnings, temporary suspension, or permanent removal from the community at the discretion of the moderators.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Rules Section -->
+        <section id="rules" class="bg-white fade-in">
+            <div class="container mx-auto px-4 md:px-6 py-12">
+                <div class="max-w-4xl mx-auto">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-8 slide-up">Server Rules</h2>
+                    <div class="bg-gray-50 rounded-xl p-6 md:p-8 slide-up" style="animation-delay: 0.2s;">
+                        <div class="space-y-6">
+                            <div class="flex items-start space-x-4">
+                                <div>
+                                    <p class="text-gray-600 mb-4 leading-relaxed">DementiaCraft is a server focused on PvE. We expect kindness, maturity, community and common sense from our Geezers (that's you)!</p>
+                                    <p class="text-gray-600 mb-4 leading-relaxed">Should you like to have that more defined, here are our go and no-go</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-4">
+                               
+                                <div>
+                                   <h3 class="text-lg font-semibold text-gray-800 mb-1">GO</h3>
+                                   
+                                    <ul class="list-disc list-inside text-gray-600 mb-6 space-y-2">
+                                        <li>Be kind</li>
+                                        <li>Patch creeper holes to the best of your ability</li>
+                                        <li>Be respectful of players and builds</li>
+                                        <li>Make farms as lag free as possible - we also have AFK-kick, to maintain a smooth server experience for all, you will be kicked after 3hrs of AFK-time</li>
+                                        <li>Friendly pranking between friends is allowed, as long as you are prepared to do the cleanup and aren’t destroying stuff. If in doubt, don’t do it</li>
+                                        <li>Check with new neighbors before setting up base</li>
+                                    </ul>
+                                    
+                                    <h3 class="text-lg font-semibold text-gray-800 mb-1"><strong>NO GO</strong></h3>
+
+                                    <ul class="list-disc list-inside text-gray-600 mb-6 space-y-2">
+                                        <li>Griefing: We don't accept any form of griefing or stealing, don't mess with others stuff like builds (including but not limited to; portals, shops, farms, modes of transport etc.), areas or mobs.</li>
+                                        <li>PvP: pvp is only okay, if consensual.</li>
+                                        <li>No bases at spawn or the shopping district.</li>
+                                        <li>No third party clients / hacking / X-ray or the like, if you have questions about a mod, please check with support.</li>
+                                        <li>No mods that gives an advantage over regular vanilla minecraft - ie. litematica is allowed, litematica-printing is not - no-clip freecam is allowed, full freecam is not etc.</li>
+                                        <li>Chunk loaders/systems are not permitted, neither are perimeters without express consent from the Elders.</li>
+                                        <li>The community at large should have access to all possible limited experiences, please check with the Elders beforehand.</li>
+                                        <li>SE quadrant of the End is a strictly no-fly zone. This to keep the option to successfully explore and raid vanilla style - see announcements for more on this.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                           
+                           
+                        </div>
+                        <div class="mt-8 bg-white p-4 rounded-lg border border-gray-200 slide-up" style="animation-delay: 0.4s;">
+                            <p class="text-gray-600 text-sm italic">We operate on an honor system, if we find you to be in breach of this, or not following the spirit of the server and community, you risk being removed from the server.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Shopping District Section -->
+        <section id="shopping" class="bg-white fade-in">
+            <div class="container mx-auto px-4 md:px-6 py-12">
+                <div class="max-w-4xl mx-auto">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-8 slide-up">Shopping District</h2>
+                    <h4 class="text-lg font-semibold mb-4 text-gray-800">Welcome to the Shopping District</h4>
+                    <div class="bg-gray-50 rounded-xl p-6 md:p-8 slide-up" style="animation-delay: 0.2s;">
+                        <div class="space-y-6">
+                            <div class="flex items-start space-x-4">
+                                <div>
+                                    <p class="text-gray-600 mb-4 leading-relaxed">To make sure we keep a dynamic and buzzing shopping district, we have the following rules:</p>
+                                    
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-4">
+                                <div>
+                                   
+                                    <ul class="list-disc list-inside text-gray-600 mb-6 space-y-2">
+                                        <li>No bases at spawn or in/under/over/around the shopping district.</li>
+                                        <li>All builds must be an active shop (beautifying areas are welcome).</li>
+                                        <li>New shops must be built in the currently active space.</li>
+                                        <li>Shops are run on a bartering honor system: shops decide their chosen payment, and payment must be placed when you pick up your purchase (ie: 1 stack of logs = 2 diamonds. Replace 1 stack of logs with your 2 diamonds).</li>
+                                    </ul>
+                                    
+                                    <h3 class="text-lg font-semibold text-gray-800 mb-1">Everyone is allowed to establish a shop in the shopping district following these steps:</h3>
+
+                                            <p class="mb-6"><strong>Buy a plot of available space on the currently active island</strong></p>
+                                            <ul class="list-disc list-inside text-gray-600 mb-6 space-y-2">
+                                                <li>Plots are 10 by 10 blocks and cost 1 diamond block to purchase</li>
+                                                <li>You may purchase 5 plots per shop build</li>
+                                                <li>The plots must be connected (20×20 square? – 10×30 rectangle? – L-shaped? – T-shaped?)</li>
+                                                <li>You may only make 1 shop per connected plot purchase</li>
+                                            </ul>
+
+                                            <p class="mb-6"><strong>Your shop must have a minor and themed assortment of inventory (no malls)</strong></p>
+                                            <ul class="list-disc list-inside text-gray-600 mb-6 space-y-2">
+                                                <li>Keep inventory themed, ie:
+                                                    logs // stones // wool // books // gunpowder and fireworks // etc.</li>
+                                                <li>Ask the Elders if in doubt</li>
+                                                <li>The build doesn’t have to match your inventory, but you’re welcome to theme that too</li>
+                                            </ul>
+
+                                            <p class="mb-6"><strong>You must hook up the shop to a path / establish a path</strong></p>
+
+                                            <p class="mb-6"><strong>You must announce your shop</strong></p>
+                                            <ul class="list-disc list-inside text-gray-600 mb-6 space-y-2">
+                                                <li>In the #ShoppingDistrict channel</li>
+                                                <li>Mark it on the in-game map</li>
+                                                <li>The shop must have 1 visible sign stating the ownership</li>
+                                            </ul>
+
+                                            <p class="mb-6"><strong>No price gouging</strong></p>
+                                            <ul class="list-disc list-inside text-gray-600 mb-6 space-y-2">
+                                                <li>price your inventory reasonably and competitively, and do not undercut other businesses</li>    
+                                            </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-gray-300 py-8 fade-in">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <a href="#" class="flex items-center space-x-2">
+                        <div class="w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center text-white font-bold text-sm">
+                            DC
+                        </div>
+                        <span class="text-white font-bold">DementiaCraft</span>
+                    </a>
+                </div>
+               
+                <a href="#" class="mt-4 md:mt-0 text-white hover:text-blue-300 transition-colors duration-300 flex items-center space-x-1">
+                    <span>Back to Top</span>
+                    <i class="fas fa-arrow-up"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Smooth scroll to anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    
+                    // Update URL without jumping
+                    history.pushState(null, null, targetId);
+                }
+            });
+        });
+
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+        
+        // Close mobile menu when clicking on a link (handled by smooth scroll now)
+        
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 10) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+        
+        // Trigger animations when elements come into view
+        const observerOptions = {
+            threshold: 0.1
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('slide-up');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('.slide-up').forEach(element => {
+            observer.observe(element);
+        });
+    </script>
+</body>
+</html>
