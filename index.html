@@ -15,6 +15,10 @@
             --secondary: #119b84;
             --dark: #1e293b;
             --light: #119b84;
+            --section-1: #f0f9ff;
+            --section-2: #f5f3ff;
+            --section-3: #fff7ed;
+            --section-4: #f0fdf4;
         }
         
         body {
@@ -100,18 +104,16 @@
             <div class="flex justify-between items-center">
                 <!-- Logo -->
                 <a href="#" class="flex items-center space-x-2">
-                    <div class="w-10 h-10 rounded-full bg-color-primary flex items-center justify-center text-white font-bold text-xl scale-in">
-                        DC
-                    </div>
+                    <div class="w-10 h-10 rounded-full flex items-center justify-center text-white font-bold text-xl scale-in"><img src="https://i.imgur.com/QuAwDCo.png"></div>
                     <span class="text-xl font-bold text-gray-800 hidden sm:block">DementiaCraft</span>
                 </a>
                 
                 <!-- Desktop Navigation -->
                 <div class="hidden md:flex space-x-8">
-                    <a href="#about" class="text-gray-600 hover:text-blue-500 transition-colors duration-300 font-medium">About</a>
-                    <a href="#join" class="text-gray-600 hover:text-blue-500 transition-colors duration-300 font-medium">Join</a>
-                    <a href="#rules" class="text-gray-600 hover:text-blue-500 transition-colors duration-300 font-medium">Rules</a>
-                    <a href="#shopping" class="text-gray-600 hover:text-blue-500 transition-colors duration-300 font-medium">Shopping District</a>
+                    <a href="#about" class="text-gray-600 hover:text-blue-500 transition-colors duration-300 font-medium hover:scale-105 transform">About</a>
+                    <a href="#join" class="text-gray-600 hover:text-blue-500 transition-colors duration-300 font-medium hover:scale-105 transform">Join</a>
+                    <a href="#rules" class="text-gray-600 hover:text-blue-500 transition-colors duration-300 font-medium hover:scale-105 transform">Rules</a>
+                    <a href="#shopping" class="text-gray-600 hover:text-blue-500 transition-colors duration-300 font-medium hover:scale-105 transform">Shopping District</a>
                 </div>
                 
                 <!-- Mobile Menu Button -->
@@ -126,10 +128,10 @@
         <!-- Mobile Navigation -->
         <div id="mobile-menu" class="md:hidden hidden bg-white w-full py-2 px-4 shadow-lg">
             <div class="flex flex-col space-y-3">
-                <a href="#about" class="text-gray-600 hover:text-blue-500 transition-colors duration-300 font-medium py-2 border-b border-gray-100">About</a>
-                <a href="#join" class="text-gray-600 hover:text-blue-500 transition-colors duration-300 font-medium py-2 border-b border-gray-100">Join</a>
-                <a href="#rules" class="text-gray-600 hover:text-blue-500 transition-colors duration-300 font-medium py-2 border-b border-gray-100">Rules</a>
-                <a href="#shopping" class="text-gray-600 hover:text-blue-500 transition-colors duration-300 font-medium py-2">Shopping District</a>
+                <a href="#about" class="text-gray-600 hover:text-blue-500 transition-colors duration-300 font-medium py-2 border-b border-gray-100 hover:scale-105 transform">About</a>
+                <a href="#join" class="text-gray-600 hover:text-blue-500 transition-colors duration-300 font-medium py-2 border-b border-gray-100 hover:scale-105 transform">Join</a>
+                <a href="#rules" class="text-gray-600 hover:text-blue-500 transition-colors duration-300 font-medium py-2 border-b border-gray-100 hover:scale-105 transform">Rules</a>
+                <a href="#shopping" class="text-gray-600 hover:text-blue-500 transition-colors duration-300 font-medium py-2 hover:scale-105 transform">Shopping District</a>
             </div>
         </div>
     </nav>
@@ -137,7 +139,7 @@
     <!-- Main Content -->
     <main>
         <!-- About Section -->
-        <section id="about" class="bg-white fade-in">
+        <section id="about" class="bg-[var(--section-1)] fade-in">
             <div class="container mx-auto px-4 md:px-6 py-12">
                 <div class="max-w-4xl mx-auto">
                     <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-8 slide-up">What is DementiaCraft?</h1>
@@ -186,6 +188,8 @@
                                 <li>Bats drop membranes</li>
                                 <li>We’ve also provided the Endermen with a nice invisible block, so they won’t rearrange your terraforming</li>
                             </ul>
+                            
+                            <a href="#join" class="bg-red-dark rounded-lg p-4 font-bold text-white hover:bg-opacity-60 transition-all duration-300 transform hover:scale-105">Join Now</a>
                         </div>
 
                         <div class="slide-up" style="animation-delay: 0.4s;">
@@ -205,21 +209,23 @@
         </section>
         
         <!-- Join Section -->
-        <section id="join" class="bg-white fade-in">
+        <section id="join" class="bg-[var(--section-2)] fade-in">
             <div class="container mx-auto px-4 md:px-6 py-12">
                 <div class="max-w-4xl mx-auto">
                     <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-8 slide-up">Join DementiaCraft</h2>
-                    <div class="bg-gray-50 rounded-xl p-6 md:p-8 slide-up" style="animation-delay: 0.2s;">
+                    <div class="bg-white/80 rounded-xl p-6 md:p-8 slide-up" style="animation-delay: 0.2s;">
                         <div class="space-y-6">
-                            <div class="flex items-start space-x-4">
-                                <div>
+                            <div class="flex flex-col md:flex-row gap-8">
+                                <div class="md:w-2/3">
                                     <p class="text-gray-600 mb-4 leading-relaxed">DementiaCraft is considered a safe space and welcomes all players regardless of gender identity, race, religion, etc. No griefing, stealing, bullying, insulting, discrimination of any kind, or prejudiced behavior is tolerated. Toxic behavior is not welcome.</p>
                                     <p class="text-gray-600 mb-4 leading-relaxed">We encourage constructive communication, cooperation, and collaboration, enabling everyone to flourish and develop their skills in a welcoming atmosphere.</p>
                                 </div>
                             </div>
-                            <div class="flex items-start space-x-4">
-                               
-                                <div>
+                            <div class="flex flex-col md:flex-row gap-8">
+                                <div class="md:w-2/3">
+                                    <div class="mb-8 rounded-xl overflow-hidden">
+                                        <img src="https://i.imgur.com/QxWBH8V.png" alt="Join DementiaCraft" class="w-full h-auto rounded-xl shadow-lg">
+                                    </div>
                                    <h3 class="text-lg font-semibold text-gray-800 mb-1">Expectations</h3>
                                     <p><strong>We are looking for players who are</strong>:</p>
                                     <ul class="list-disc list-inside text-gray-600 mb-6 space-y-2">
@@ -238,17 +244,14 @@
                                         <li>Grief protection to keep your builds and progress safe.</li>
                                     </ul>
 
-                                    <h3 class="text-lg font-semibold text-gray-800 mb-1">Application process</h3>
-                                    <p>If you wish to join us, please <a href="https://web.archive.org/web/20250619030310/https://form.jotform.com/232073734911049" target="_blank" rel="noopener" title=""><strong>fill out this survey</strong></a>, then we will reach out to you via discord</p>
-
-
-
+                                    <h3 id="apply" class="text-lg font-semibold text-gray-800 mb-1">Application process</h3>
+                                    <p>If you wish to join us, please <a href="https://form.jotform.com/232073734911049" target="_blank" rel="noopener" title="Join DementiaCraft"><strong>fill out this survey</strong></a>, then we will reach out to you via discord</p>
                                 </div>
                             </div>
                            
                            
                         </div>
-                        <div class="mt-8 bg-white p-4 rounded-lg border border-gray-200 slide-up" style="animation-delay: 0.4s;">
+                        <div class="mt-8 bg-white/90 p-4 rounded-lg border border-gray-200 slide-up" style="animation-delay: 0.4s;">
                             <p class="text-gray-600 text-sm italic">By joining our community, you agree to abide by these rules. Violations may result in warnings, temporary suspension, or permanent removal from the community at the discretion of the moderators.</p>
                         </div>
                     </div>
@@ -257,21 +260,23 @@
         </section>
         
         <!-- Rules Section -->
-        <section id="rules" class="bg-white fade-in">
+        <section id="rules" class="bg-[var(--section-3)] fade-in">
             <div class="container mx-auto px-4 md:px-6 py-12">
                 <div class="max-w-4xl mx-auto">
                     <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-8 slide-up">Server Rules</h2>
                     <div class="bg-gray-50 rounded-xl p-6 md:p-8 slide-up" style="animation-delay: 0.2s;">
                         <div class="space-y-6">
-                            <div class="flex items-start space-x-4">
-                                <div>
+                            <div class="flex flex-col md:flex-row gap-8">
+                                <div class="md:w-2/3">
                                     <p class="text-gray-600 mb-4 leading-relaxed">DementiaCraft is a server focused on PvE. We expect kindness, maturity, community and common sense from our Geezers (that's you)!</p>
                                     <p class="text-gray-600 mb-4 leading-relaxed">Should you like to have that more defined, here are our go and no-go</p>
                                 </div>
                             </div>
-                            <div class="flex items-start space-x-4">
-                               
-                                <div>
+                            <div class="flex flex-col md:flex-row gap-8">
+                                <div class="md:w-2/3">
+                                    <div class="mb-8 rounded-xl overflow-hidden">
+                                        <img src="https://i.imgur.com/21WTs2I.png" alt="DementiaCraft Rules" class="w-full h-auto rounded-xl shadow-lg">
+                                    </div>
                                    <h3 class="text-lg font-semibold text-gray-800 mb-1">GO</h3>
                                    
                                     <ul class="list-disc list-inside text-gray-600 mb-6 space-y-2">
@@ -295,6 +300,7 @@
                                         <li>The community at large should have access to all possible limited experiences, please check with the Elders beforehand.</li>
                                         <li>SE quadrant of the End is a strictly no-fly zone. This to keep the option to successfully explore and raid vanilla style - see announcements for more on this.</li>
                                     </ul>
+                                    <a href="#join" class="bg-[var(--primary)] rounded-lg p-4 font-bold text-white hover:bg-[var(--secondary)] transition-all duration-300 transform hover:scale-105">Join Now</a>
                                 </div>
                             </div>
                            
@@ -309,21 +315,24 @@
         </section>
         
         <!-- Shopping District Section -->
-        <section id="shopping" class="bg-white fade-in">
+        <section id="shopping" class="bg-[var(--section-4)] fade-in">
             <div class="container mx-auto px-4 md:px-6 py-12">
                 <div class="max-w-4xl mx-auto">
                     <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-8 slide-up">Shopping District</h2>
                     <h4 class="text-lg font-semibold mb-4 text-gray-800">Welcome to the Shopping District</h4>
                     <div class="bg-gray-50 rounded-xl p-6 md:p-8 slide-up" style="animation-delay: 0.2s;">
                         <div class="space-y-6">
-                            <div class="flex items-start space-x-4">
-                                <div>
+                            <div class="flex flex-col md:flex-row gap-8">
+                                <div class="md:w-2/3">
                                     <p class="text-gray-600 mb-4 leading-relaxed">To make sure we keep a dynamic and buzzing shopping district, we have the following rules:</p>
                                     
                                 </div>
                             </div>
-                            <div class="flex items-start space-x-4">
-                                <div>
+                            <div class="flex flex-col md:flex-row gap-8">
+                                <div class="md:w-2/3">
+                                    <div class="mb-8 rounded-xl overflow-hidden">
+                                        <img src="https://i.imgur.com/GcvxHHP.png" alt="Shopping District" class="w-full h-auto rounded-xl shadow-lg">
+                                    </div>
                                    
                                     <ul class="list-disc list-inside text-gray-600 mb-6 space-y-2">
                                         <li>No bases at spawn or in/under/over/around the shopping district.</li>
@@ -363,6 +372,8 @@
                                             <ul class="list-disc list-inside text-gray-600 mb-6 space-y-2">
                                                 <li>price your inventory reasonably and competitively, and do not undercut other businesses</li>    
                                             </ul>
+
+                                            <a href="#join" class="bg-[var(--primary)] rounded-lg p-4 font-bold text-white hover:bg-[var(--secondary)] transition-all duration-300 transform hover:scale-105">Join Now</a>
                                 </div>
                             </div>
                         </div>
@@ -378,17 +389,11 @@
             <div class="flex flex-col md:flex-row justify-between items-center">
                 <div class="mb-4 md:mb-0">
                     <a href="#" class="flex items-center space-x-2">
-                        <div class="w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center text-white font-bold text-sm">
-                            DC
-                        </div>
+                       <div class="w-10 h-10 rounded-full flex items-center justify-center text-white font-bold text-xl scale-in"><img src="https://i.imgur.com/QuAwDCo.png"></div>
                         <span class="text-white font-bold">DementiaCraft</span>
                     </a>
                 </div>
                
-                <a href="#" class="mt-4 md:mt-0 text-white hover:text-blue-300 transition-colors duration-300 flex items-center space-x-1">
-                    <span>Back to Top</span>
-                    <i class="fas fa-arrow-up"></i>
-                </a>
             </div>
         </div>
     </footer>
@@ -448,6 +453,26 @@
         
         document.querySelectorAll('.slide-up').forEach(element => {
             observer.observe(element);
+        });
+
+    </script>
+
+    <!-- Fixed Back to Top Button -->
+    <a href="#" id="back-to-top" class="fixed bottom-6 right-6 w-12 h-12 rounded-full bg-color-primary text-white flex items-center justify-center shadow-lg hover:transition-all duration-300 z-50 transform hover:scale-110 opacity-0 invisible transition-opacity duration-300">
+        <i class="fas fa-arrow-up text-xl"></i>
+    </a>
+
+    <script>
+        // Show/hide back-to-top button based on scroll position
+        const backToTopButton = document.getElementById('back-to-top');
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 300) {
+                backToTopButton.classList.remove('opacity-0', 'invisible');
+                backToTopButton.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopButton.classList.remove('opacity-100', 'visible');
+                backToTopButton.classList.add('opacity-0', 'invisible');
+            }
         });
     </script>
 </body>
